@@ -11,7 +11,7 @@
     <%= product.category.name %>
   </td>
   <td>
-    <%= fix/money-formatting product.price %>
+    <%= humanized_money_with_symbol cart_subtotal_cents product.price %>
   </td>
   <td>
     <%= product.quantity %>
