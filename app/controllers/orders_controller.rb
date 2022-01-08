@@ -8,6 +8,11 @@ class OrdersController < ApplicationController
     charge = perform_stripe_charge
     order  = create_order(charge)
 
+  # def order_subtotal_cents
+  #   @order.line_items.map {|entry| entry[:product].price_cents * entry[:quantity]}.sum
+  # end
+    
+
     if order.valid?
       empty_cart!
       redirect_to order, notice: 'Your Order has been placed.'
