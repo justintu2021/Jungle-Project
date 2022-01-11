@@ -17,7 +17,6 @@
       <%= link_to 'Login', '/login' %> | <%= link_to 'Signup', '/signup' %>
     <% end %>
     
-
     <%# without any args, yield will render template of current controller/action %>
     <%= yield %>
   </main>
@@ -25,3 +24,5 @@
   <%= yield :end_of_body %>
 </body>
 </html>
+
+
