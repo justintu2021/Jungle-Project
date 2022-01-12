@@ -18,7 +18,15 @@ RSpec.describe Product, type: :model do
       @product = Product.new(name: "highlight",image: open_asset('apparel1.jpg'), price_cents: 64.99, quantity: 3)
       get_description = @product.description
 
-      expect(get_description).not_to be_nil
+      expect(get_description).to be_nil
+    end
+
+    it "return nil if we don't input description" do
+      @category = Category.new(name: "fashion")
+      @product = Product.new(name: "highlight", description: "young age", image: open_asset('apparel1.jpg'), price_cents: 64.99, quantity: 3)
+      get_description = @product.description
+
+      expect(get_description).to eq("young age")
     end
   end
 end
